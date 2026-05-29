@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
         features = "src/test/resources/features/register.feature",
-        glue = "co.edu.udea.certificacion.taller.stepdefinitions",
+        glue = "co.edu.udea.certificacion.taller.moduloauthycompra.stepdefinitions",
         snippets = CucumberOptions.SnippetType.CAMELCASE
 )
 public class AutomatizacionRunner {}

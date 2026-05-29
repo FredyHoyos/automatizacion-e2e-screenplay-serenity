@@ -1,17 +1,27 @@
 package co.edu.udea.certificacion.taller.moduloauthycompra.stepdefinitions;
 
+import co.edu.udea.certificacion.taller.moduloauthycompra.tasks.OpenThe;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import net.serenitybdd.screenplay.actions.Open;
+import net.serenitybdd.annotations.Managed;
+import net.serenitybdd.screenplay.Actor;
+import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
+import org.openqa.selenium.WebDriver;
 
-public class StepDefinition {
+public class AutomatizacionStepDefinition {
+
+    public final Actor Buyer = Actor.named("Juanito");
+
+    @Managed(driver = "chrome", uniqueSession = true)
+    public WebDriver theDriver;
 
     @Before
     public void config(){
+        Buyer.can(BrowseTheWeb.with(theDriver));
         OnStage.setTheStage(new OnlineCast());
         OnStage.theActorCalled("user");
     }
@@ -25,23 +35,23 @@ public class StepDefinition {
 
     @Given("que el usuario ingresa a la pagina")
     public void queElUsuarioIngresaALaPagina() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        Buyer.attemptsTo(OpenThe.browser());
+        //throw new io.cucumber.java.PendingException();
     }
     @When("selecciona la opcion de registro")
     public void seleccionaLaOpcionDeRegistro() {
         // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        //throw new io.cucumber.java.PendingException();
     }
     @When("completa el formulario correctamente")
     public void completaElFormularioCorrectamente() {
         // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        //throw new io.cucumber.java.PendingException();
     }
     @Then("la cuenta debe crearse exitosamente")
     public void laCuentaDebeCrearseExitosamente() {
         // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        //throw new io.cucumber.java.PendingException();
     }
 
 
