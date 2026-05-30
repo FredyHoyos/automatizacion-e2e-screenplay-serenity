@@ -1,0 +1,28 @@
+# Gradle
+.gradle/
+build/
+
+# Serenity
+target/
+
+# IntelliJ
+.idea/
+*.iml
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
+
+# Java
+*.class
+
+# OS
+.DS_Store
+Thumbs.db
