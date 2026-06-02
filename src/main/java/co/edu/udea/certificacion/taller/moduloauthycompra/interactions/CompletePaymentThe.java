@@ -27,14 +27,20 @@ public class CompletePaymentThe implements Interaction {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        actor.attemptsTo(WaitUntil.the(NAME_ON_CARD, isVisible()).forNoMoreThan(10).seconds());
-        actor.attemptsTo(Enter.theValue(payment.getNameOnCard()).into(NAME_ON_CARD));
-        actor.attemptsTo(Enter.theValue(payment.getCardNumber()).into(CARD_NUMBER));
-        actor.attemptsTo(Enter.theValue(payment.getCvc()).into(CARD_CVC));
-        actor.attemptsTo(Enter.theValue(payment.getExpiryMonth()).into(EXPIRY_MONTH));
-        actor.attemptsTo(Enter.theValue(payment.getExpiryYear()).into(EXPIRY_YEAR));
-        actor.attemptsTo(Click.on(PAY_BUTTON));
+        //actor.attemptsTo(WaitUntil.the(NAME_ON_CARD, isVisible()).forNoMoreThan(10).seconds());
         Wait.aLittelBitTime(1000);
+        actor.attemptsTo(Enter.theValue(payment.getNameOnCard()).into(NAME_ON_CARD));
+        Wait.aLittelBitTime(1000);
+        actor.attemptsTo(Enter.theValue(payment.getCardNumber()).into(CARD_NUMBER));
+        Wait.aLittelBitTime(1000);
+        actor.attemptsTo(Enter.theValue(payment.getCvc()).into(CARD_CVC));
+        Wait.aLittelBitTime(1000);
+        actor.attemptsTo(Enter.theValue(payment.getExpiryMonth()).into(EXPIRY_MONTH));
+        Wait.aLittelBitTime(1000);
+        actor.attemptsTo(Enter.theValue(payment.getExpiryYear()).into(EXPIRY_YEAR));
+        Wait.aLittelBitTime(1000);
+        actor.attemptsTo(Click.on(PAY_BUTTON));
+        Wait.aLittelBitTime(2000);
     }
 
     public static CompletePaymentThe with(Payment payment){

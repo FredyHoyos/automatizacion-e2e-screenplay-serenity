@@ -19,7 +19,7 @@ public class ProceedToCheckoutThe implements Interaction {
         actor.attemptsTo(Enter.theValue("Compra feliz" ).into(COMMENT_BOX));
         Wait.aLittelBitTime(1000);
         actor.attemptsTo(Click.on(PLACE_ORDER_BTN));
-        Wait.aLittelBitTime(1000);
+        Wait.aLittelBitTime(2000);
     }
 
     public static ProceedToCheckoutThe page(){

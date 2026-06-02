@@ -9,7 +9,7 @@ public class AddToCartThe implements Interaction {
     @Override
     public <T extends Actor> void performAs(T actor) {
         // Placeholder: agregar producto al carrito
-        Wait.aLittelBitTime(1000);
+        Wait.aLittelBitTime(2000);
     }
 
     public static AddToCartThe buyer(){

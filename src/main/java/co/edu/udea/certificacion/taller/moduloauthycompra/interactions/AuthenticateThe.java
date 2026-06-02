@@ -30,7 +30,7 @@ public class AuthenticateThe implements Interaction {
         actor.attemptsTo(Enter.theValue(user.getPassword()).into(LOGIN_PASSWORD));
         Wait.aLittelBitTime(1000);
         actor.attemptsTo(Click.on(LOGIN_BUTTON));
-        Wait.aLittelBitTime(1000);
+        Wait.aLittelBitTime(2000);
     }
 
     public static AuthenticateThe buyer(){

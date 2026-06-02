@@ -14,7 +14,7 @@ public class ContinueThe implements Interaction {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(CloseAdThe.now());
         actor.attemptsTo(Click.on(CONTINUE_BUTTON));
-        Wait.aLittelBitTime(1000);
+        Wait.aLittelBitTime(2000);
     }
 
     public static ContinueThe page() {

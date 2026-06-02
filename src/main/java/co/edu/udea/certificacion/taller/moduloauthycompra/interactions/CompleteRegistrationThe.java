@@ -21,21 +21,33 @@ public class CompleteRegistrationThe implements Interaction {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        Wait.aLittelBitTime(3000);
-        actor.attemptsTo(Click.on(GENDER_MR));
-        actor.attemptsTo(Enter.theValue(user.getPassword()).into(PASSWORD));
-        actor.attemptsTo(SelectFromOptions.byVisibleText("10").from(DAYS));
-        actor.attemptsTo(SelectFromOptions.byVisibleText("October").from(MONTHS));
-        actor.attemptsTo(SelectFromOptions.byVisibleText("1995").from(YEARS));
-        actor.attemptsTo(Enter.theValue(user.getFirstName()).into(FIRST_NAME));
-        actor.attemptsTo(Enter.theValue(user.getLastName()).into(LAST_NAME));
-        actor.attemptsTo(Enter.theValue(user.getAddress()).into(ADDRESS));
-        actor.attemptsTo(SelectFromOptions.byVisibleText(user.getCountry()).from(COUNTRY));
-        actor.attemptsTo(Enter.theValue(user.getState()).into(STATE));
-        actor.attemptsTo(Enter.theValue(user.getCity()).into(CITY));
-        actor.attemptsTo(Enter.theValue(user.getZipcode()).into(ZIPCODE));
-        actor.attemptsTo(Enter.theValue(user.getMobileNumber()).into(MOBILE_NUMBER));
         Wait.aLittelBitTime(1000);
+        actor.attemptsTo(Click.on(GENDER_MR));
+        Wait.aLittelBitTime(1000);
+        actor.attemptsTo(Enter.theValue(user.getPassword()).into(PASSWORD));
+        Wait.aLittelBitTime(1000);
+        actor.attemptsTo(SelectFromOptions.byVisibleText("10").from(DAYS));
+        Wait.aLittelBitTime(1000);
+        actor.attemptsTo(SelectFromOptions.byVisibleText("October").from(MONTHS));
+        Wait.aLittelBitTime(1000);
+        actor.attemptsTo(SelectFromOptions.byVisibleText("1995").from(YEARS));
+        Wait.aLittelBitTime(1000);
+        actor.attemptsTo(Enter.theValue(user.getFirstName()).into(FIRST_NAME));
+        Wait.aLittelBitTime(1000);
+        actor.attemptsTo(Enter.theValue(user.getLastName()).into(LAST_NAME));
+        Wait.aLittelBitTime(1000);
+        actor.attemptsTo(Enter.theValue(user.getAddress()).into(ADDRESS));
+        Wait.aLittelBitTime(1000);
+        actor.attemptsTo(SelectFromOptions.byVisibleText(user.getCountry()).from(COUNTRY));
+        Wait.aLittelBitTime(1000);
+        actor.attemptsTo(Enter.theValue(user.getState()).into(STATE));
+        Wait.aLittelBitTime(1000);
+        actor.attemptsTo(Enter.theValue(user.getCity()).into(CITY));
+        Wait.aLittelBitTime(1000);
+        actor.attemptsTo(Enter.theValue(user.getZipcode()).into(ZIPCODE));
+        Wait.aLittelBitTime(1000);
+        actor.attemptsTo(Enter.theValue(user.getMobileNumber()).into(MOBILE_NUMBER));
+        Wait.aLittelBitTime(2000);
         actor.attemptsTo(Click.on(CREATE_ACCOUNT_BUTTON));
     }
 

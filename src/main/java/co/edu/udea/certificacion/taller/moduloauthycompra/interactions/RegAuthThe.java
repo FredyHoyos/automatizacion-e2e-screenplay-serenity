@@ -13,7 +13,7 @@ import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isClic
 public class RegAuthThe implements Interaction {
     @Override
     public <T extends Actor> void performAs(T actor) {
-        actor.attemptsTo(WaitUntil.the(SIGNUP_LOGIN_BTN, isClickable()).forNoMoreThan(10).seconds());
+        //actor.attemptsTo(WaitUntil.the(SIGNUP_LOGIN_BTN, isClickable()).forNoMoreThan(10).seconds());
         actor.attemptsTo(Click.on(SIGNUP_LOGIN_BTN));
     }
 
