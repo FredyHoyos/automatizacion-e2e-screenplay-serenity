@@ -134,4 +134,11 @@ public class SauceLabPageObject {
     // Confirmacion
     public static final Target ORDER_CONFIRMATION = Target.the("order confirmation")
         .locatedBy("//h2[@data-qa='order-placed']");
+
+    // Validaciones
+    public static final Target INFO_EMAIL_EXIST = Target.the("EXISTING EMAIL ADDRESS")
+        .locatedBy("//*[contains(text(),'Email Address already exist!')]");
+
+    public static final Target INFO_SECOND_FORM = Target.the("Second form")
+        .locatedBy("//*[contains(text(),'Enter Account Information')]");
 }

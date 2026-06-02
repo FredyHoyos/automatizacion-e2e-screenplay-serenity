@@ -1,0 +1,56 @@
+package co.edu.udea.certificacion.taller.moduloauthycompra.interactions;
+
+import co.edu.udea.certificacion.taller.moduloauthycompra.models.User;
+import co.edu.udea.certificacion.taller.moduloauthycompra.utils.Wait;
+import net.serenitybdd.screenplay.Actor;
+import net.serenitybdd.screenplay.Interaction;
+import net.serenitybdd.screenplay.Tasks;
+import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.actions.Enter;
+import net.serenitybdd.screenplay.actions.SelectFromOptions;
+
+import static co.edu.udea.certificacion.taller.moduloauthycompra.userinterfaces.SauceLabPageObject.*;
+
+public class CompleteRegistrationFillOnly implements Interaction {
+
+    private final User user;
+
+    public CompleteRegistrationFillOnly(User user) {
+        this.user = user;
+    }
+
+    @Override
+    public <T extends Actor> void performAs(T actor) {
+        Wait.aLittelBitTime(500);
+        actor.attemptsTo(Click.on(GENDER_MR));
+        Wait.aLittelBitTime(500);
+        actor.attemptsTo(Enter.theValue(user.getPassword()).into(PASSWORD));
+        Wait.aLittelBitTime(500);
+        actor.attemptsTo(SelectFromOptions.byVisibleText("10").from(DAYS));
+        Wait.aLittelBitTime(500);
+        actor.attemptsTo(SelectFromOptions.byVisibleText("October").from(MONTHS));
+        Wait.aLittelBitTime(500);
+        actor.attemptsTo(SelectFromOptions.byVisibleText("1995").from(YEARS));
+        Wait.aLittelBitTime(500);
+        actor.attemptsTo(Enter.theValue(user.getFirstName()).into(FIRST_NAME));
+        Wait.aLittelBitTime(500);
+        actor.attemptsTo(Enter.theValue(user.getLastName()).into(LAST_NAME));
+        Wait.aLittelBitTime(500);
+        actor.attemptsTo(Enter.theValue(user.getAddress()).into(ADDRESS));
+        Wait.aLittelBitTime(500);
+        actor.attemptsTo(SelectFromOptions.byVisibleText(user.getCountry()).from(COUNTRY));
+        Wait.aLittelBitTime(500);
+        actor.attemptsTo(Enter.theValue(user.getState()).into(STATE));
+        Wait.aLittelBitTime(500);
+        actor.attemptsTo(Enter.theValue(user.getCity()).into(CITY));
+        Wait.aLittelBitTime(500);
+        actor.attemptsTo(Enter.theValue(user.getZipcode()).into(ZIPCODE));
+        Wait.aLittelBitTime(500);
+        actor.attemptsTo(Enter.theValue(user.getMobileNumber()).into(MOBILE_NUMBER));
+        Wait.aLittelBitTime(500);
+    }
+
+    public static CompleteRegistrationFillOnly with(User user) {
+        return Tasks.instrumented(CompleteRegistrationFillOnly.class, user);
+    }
+}

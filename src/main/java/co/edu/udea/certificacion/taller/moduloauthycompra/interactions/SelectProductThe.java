@@ -26,7 +26,7 @@ public class SelectProductThe implements Interaction {
         actor.attemptsTo(Click.on(ADD_TO_CART_FIRST));
         Wait.aLittelBitTime(1000);
         actor.attemptsTo(Click.on(CONTINUE_SHOPPING_BTN));
-        Wait.aLittelBitTime(1000);
+        Wait.aLittelBitTime(2000);
     }
 
     public static SelectProductThe with(Product product){

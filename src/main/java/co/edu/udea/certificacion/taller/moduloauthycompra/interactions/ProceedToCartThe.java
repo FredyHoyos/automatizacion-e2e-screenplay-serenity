@@ -12,7 +12,7 @@ public class ProceedToCartThe implements Interaction {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(Click.on(CART_BTN));
-        Wait.aLittelBitTime(1000);
+        Wait.aLittelBitTime(2000);
     }
 
     public static ProceedToCartThe page(){
