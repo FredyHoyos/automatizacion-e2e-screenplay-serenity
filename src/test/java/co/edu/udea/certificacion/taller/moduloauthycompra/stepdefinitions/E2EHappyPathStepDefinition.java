@@ -61,6 +61,7 @@ public class E2EHappyPathStepDefinition {
     @When("confirma la creacion de la cuenta")
     public void confirmaLaCreacionDeLaCuenta() {
         GivenWhenThen.then(buyer).should(seeThat(AccountCreatedThe.isVisible()));
+        buyer.attemptsTo(ContinueThe.page());
     }
 
     @When("navega a la seccion de productos")

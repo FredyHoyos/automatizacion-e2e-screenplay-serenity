@@ -12,7 +12,6 @@ public class ContinueThe implements Interaction {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        actor.attemptsTo(CloseAdThe.now());
         actor.attemptsTo(Click.on(CONTINUE_BUTTON));
         Wait.aLittelBitTime(2000);
     }
