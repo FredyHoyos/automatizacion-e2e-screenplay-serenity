@@ -14,7 +14,7 @@ public class ValidationThe implements Question<Boolean> {
         return msgFromPage.contains("Logged in as");
     }
 
-    public static ValidationThe productsPage(){
+    public static ValidationThe loggedIn(){
         return new ValidationThe();
     }
 }
