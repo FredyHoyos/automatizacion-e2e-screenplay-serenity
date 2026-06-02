@@ -6,7 +6,9 @@ import net.serenitybdd.screenplay.Interaction;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
+import net.serenitybdd.screenplay.waits.WaitUntil;
 import co.edu.udea.certificacion.taller.moduloauthycompra.utils.Wait;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 import static co.edu.udea.certificacion.taller.moduloauthycompra.userinterfaces.SauceLabPageObject.CARD_CVC;
 import static co.edu.udea.certificacion.taller.moduloauthycompra.userinterfaces.SauceLabPageObject.CARD_NUMBER;
@@ -25,6 +27,7 @@ public class CompletePaymentThe implements Interaction {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
+        actor.attemptsTo(WaitUntil.the(NAME_ON_CARD, isVisible()).forNoMoreThan(10).seconds());
         actor.attemptsTo(Enter.theValue(payment.getNameOnCard()).into(NAME_ON_CARD));
         actor.attemptsTo(Enter.theValue(payment.getCardNumber()).into(CARD_NUMBER));
         actor.attemptsTo(Enter.theValue(payment.getCvc()).into(CARD_CVC));

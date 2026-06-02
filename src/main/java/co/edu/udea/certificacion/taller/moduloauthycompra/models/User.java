@@ -1,5 +1,7 @@
 package co.edu.udea.certificacion.taller.moduloauthycompra.models;
 
+import java.util.UUID;
+
 public class User {
     private String name;
     private String email;
@@ -20,7 +22,7 @@ public class User {
     public static User defaultUser() {
         User user = new User();
         user.setName("Juanito");
-        user.setEmail("juanito.automation.exercise@gmail.com");
+        user.setEmail("juanito." + UUID.randomUUID().toString().substring(0, 8) + "@gmail.com");
         user.setPassword("Password123");
         user.setFirstName("Juan");
         user.setLastName("Perez");
