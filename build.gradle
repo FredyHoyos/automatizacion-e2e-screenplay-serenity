@@ -41,7 +41,10 @@ dependencies {
     implementation "net.serenity-bdd:serenity-core:$rootProject.ext.serenityVersion"
     implementation "net.serenity-bdd:serenity-junit:$rootProject.ext.serenityVersion"
     implementation "net.serenity-bdd:serenity-screenplay:$rootProject.ext.serenityVersion"
-    implementation "net.serenity-bdd:serenity-cucumber:$rootProject.ext.serenityCucumberVersion"
+    testImplementation "net.serenity-bdd:serenity-cucumber:$rootProject.ext.serenityCucumberVersion"
+    // Cucumber dependencies (align with serenity-cucumber 4.x)
+    testImplementation 'io.cucumber:cucumber-java:7.11.0'
+    testImplementation 'io.cucumber:cucumber-junit:7.11.0'
     implementation 'org.slf4j:slf4j-simple:2.0.5'
     implementation "net.serenity-bdd:serenity-screenplay-webdriver:$rootProject.ext.serenityWebVersion"
 

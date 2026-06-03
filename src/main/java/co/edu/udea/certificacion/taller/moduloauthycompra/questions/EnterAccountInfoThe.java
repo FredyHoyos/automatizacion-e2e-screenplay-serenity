@@ -27,7 +27,7 @@ public class EnterAccountInfoThe implements Question<Boolean> {
 
             // Confirma si el bloque realmente muestra el texto esperado.
             return msgFromPage != null && msgFromPage.contains("Enter Account Information");
-        } catch (Exception e) {
+        } catch (Throwable e) {
             // Si ocurre cualquier problema al buscar el elemento, se toma como ausente.
             return false;
         }

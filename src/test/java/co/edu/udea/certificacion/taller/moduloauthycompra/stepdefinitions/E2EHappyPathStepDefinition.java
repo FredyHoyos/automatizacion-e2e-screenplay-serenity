@@ -23,7 +23,10 @@ import net.serenitybdd.annotations.Managed;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.GivenWhenThen;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
+import net.serenitybdd.screenplay.waits.WaitUntil;
 import org.openqa.selenium.WebDriver;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
+import static co.edu.udea.certificacion.taller.moduloauthycompra.userinterfaces.SauceLabPageObject.TITLE_CREATE_ACCOUNT;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 
@@ -60,6 +63,8 @@ public class E2EHappyPathStepDefinition {
 
     @When("confirma la creacion de la cuenta")
     public void confirmaLaCreacionDeLaCuenta() {
+        // Espera explícita a que el título de 'Account Created!' sea visible antes de afirmar.
+        buyer.attemptsTo(WaitUntil.the(TITLE_CREATE_ACCOUNT, isVisible()).forNoMoreThan(10).seconds());
         GivenWhenThen.then(buyer).should(seeThat(AccountCreatedThe.isVisible()));
         buyer.attemptsTo(ContinueThe.page());
     }

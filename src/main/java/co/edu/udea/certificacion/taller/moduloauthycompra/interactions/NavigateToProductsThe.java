@@ -12,7 +12,7 @@ public class NavigateToProductsThe implements Interaction {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(Open.browserOn().thePageNamed("pages.productsUrl"));
         Wait.aLittelBitTime(2000);
-    }
+    } 
 
     public static NavigateToProductsThe page(){
         return Tasks.instrumented(NavigateToProductsThe.class);
